@@ -21,6 +21,8 @@ function generateField(height, width) {
 
 // Takes Filed from generateField function and adds in character starting position and random holes "O"
 function updateField(array) {
+  const fullArrayLength = Math.floor(Math.random() * array.length);
+  const smallArrayLength = Math.floor(Math.random() * array[0].length);
   for (let i = 0; i < array.length; i++) {
     for (let j = 0; j < array[i].length; j++) {
       let randomNum = Math.floor(Math.random() * 3);
@@ -30,6 +32,7 @@ function updateField(array) {
     }
   }
   array[0][0] = pathCharacter;
+  array[fullArrayLength][smallArrayLength] = hat;
   let stringGrid = array.map(row => row.join(' ')).join('\n'); 
   return stringGrid;
 }
@@ -37,6 +40,3 @@ function updateField(array) {
 let testField = generateField(4, 5);
 console.log(testField)
 console.log(updateField(testField));
-
-let testNum = Math.floor(Math.random() * 5)
-console.log(testNum)
