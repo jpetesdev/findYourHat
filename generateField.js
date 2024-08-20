@@ -6,9 +6,7 @@ const pathCharacter = '*';
 
 //Creates a base Field at the specified height and width and filled with base fildCharacter
 function generateField(height, width) {
-  let grid = [
-    
-  ];
+  let grid = [];
   for (let i = height; i > 0; i--) {
     let emptyArray = [];
     while (width > emptyArray.length) {
