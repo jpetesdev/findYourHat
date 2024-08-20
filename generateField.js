@@ -35,6 +35,9 @@ function updateField(array) {
   return stringGrid;
 }
 
-let testField = generateField(4, 5);
-console.log(testField)
-console.log(updateField(testField));
+//let testField = generateField(4, 5);
+//console.log(testField)
+//console.log(updateField(testField));
+
+module.exports.generateField = generateField;
+module.exports.updateField = updateField;

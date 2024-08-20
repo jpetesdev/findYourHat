@@ -1,4 +1,7 @@
+// Imported Modules
+const fieldCreators = require('./generateField');
 const prompt = require('prompt-sync')({sigint: true});
+
 
 const hat = '^';
 const hole = 'O';
@@ -13,18 +16,14 @@ class Field {
     return this._field;
   }
   print() {
-    let stringGrid = this.field.map(row => row.join('')).join('\n');
-    console.log(stringGrid);
+    console.log(this._field);
+    //let stringGrid = this.field.map(row => row.join('')).join('\n');
+    //console.log(stringGrid);
   }
   static generateField(height, width) {
-    
+    let tempField = fieldCreators.updateField(fieldCreators.generateField(4, 4));
+    console.log(tempField);
   }
 }
 
-const myField = new Field([
-  ['* ', '░ ', 'O '],
-  ['* ', '░ ', 'O '],
-  ['* ', '░ ', 'O ']
-])
-
-myField.print();
+Field.generateField(4,4)
