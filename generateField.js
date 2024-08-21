@@ -14,11 +14,25 @@ function generateField(height, width) {
     }
     grid.push(emptyArray);
   };
+  const fullArrayLength = Math.floor(Math.random() * grid.length);
+  const smallArrayLength = Math.floor(Math.random() * grid[0].length);
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
+      let randomNum = Math.floor(Math.random() * 3);
+      if (randomNum === 0) {
+        grid[i][j] = "O";
+      } 
+    }
+  }
+  grid[0][0] = pathCharacter;
+  grid[fullArrayLength][smallArrayLength] = hat;
   return grid;
 }
 
 // Takes Filed from generateField function and adds in character starting position and random holes "O"
+
 function updateField(array) {
+  /*
   const fullArrayLength = Math.floor(Math.random() * array.length);
   const smallArrayLength = Math.floor(Math.random() * array[0].length);
   for (let i = 0; i < array.length; i++) {
@@ -31,6 +45,7 @@ function updateField(array) {
   }
   array[0][0] = pathCharacter;
   array[fullArrayLength][smallArrayLength] = hat;
+  */
   let stringGrid = array.map(row => row.join(' ')).join('\n'); 
   return stringGrid;
 }
