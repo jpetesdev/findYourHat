@@ -21,9 +21,14 @@ class Field {
     //console.log(stringGrid);
   }
   static generateField(height, width) {
-    let tempField = fieldCreators.updateField(fieldCreators.generateField(4, 4));
+    let tempField = fieldCreators.updateField(fieldCreators.generateField(height, width));
     console.log(tempField);
   }
 }
 
-Field.generateField(4,4)
+const userGridHeight = prompt('What height do you want your game field to be?: ');
+const userGridWidth = prompt('What width do you want your game field to be?: ');
+
+
+Field.generateField(parseInt(userGridHeight), parseInt(userGridWidth))
+
